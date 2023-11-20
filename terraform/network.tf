@@ -1,3 +1,13 @@
+resource "google_project_service" "compute" {
+  service = "compute.googleapis.com"
+}
+
+resource "google_project_service" "container" {
+  service = "container.googleapis.com"
+}
+
+
+
 resource "google_compute_network" "vpc_network" {
   name = var.vcp_name
 }
@@ -27,3 +37,4 @@ resource "google_compute_global_address" "default" {
   address_type = "EXTERNAL"
   ip_version = "IPV6"
 }
+
